@@ -279,13 +279,13 @@ class Account implements ModelInterface, ArrayAccess
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+//         $allowedValues = $this->getTypeAllowableValues();
+//         if (!in_array($this->container['type'], $allowedValues)) {
+//             $invalidProperties[] = sprintf(
+//                 "invalid value for 'type', must be one of '%s'",
+//                 implode("', '", $allowedValues)
+//             );
+//         }
 
         if ($this->container['onBudget'] === null) {
             $invalidProperties[] = "'onBudget' can't be null";
@@ -326,10 +326,10 @@ class Account implements ModelInterface, ArrayAccess
         if ($this->container['type'] === null) {
             return false;
         }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
-            return false;
-        }
+//         $allowedValues = $this->getTypeAllowableValues();
+//         if (!in_array($this->container['type'], $allowedValues)) {
+//             return false;
+//         }
         if ($this->container['onBudget'] === null) {
             return false;
         }
@@ -419,15 +419,15 @@ class Account implements ModelInterface, ArrayAccess
      */
     public function setType($type)
     {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowedValues)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
+//         $allowedValues = $this->getTypeAllowableValues();
+//         if (!in_array($type, $allowedValues)) {
+//             throw new \InvalidArgumentException(
+//                 sprintf(
+//                     "Invalid value for 'type', must be one of '%s'",
+//                     implode("', '", $allowedValues)
+//                 )
+//             );
+//         }
         $this->container['type'] = $type;
 
         return $this;
